@@ -12,8 +12,9 @@ import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import InboxIcon from '@material-ui/icons/MoveToInbox';
 import MailIcon from '@material-ui/icons/Mail';
+import Avatar from '@material-ui/core/Avatar';
 
-const drawerWidth = 240;
+const drawerWidth = 280;
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -29,6 +30,7 @@ const useStyles = makeStyles((theme) => ({
     },
     drawerPaper: {
         width: drawerWidth,
+        background: '#0a192f',
     },
     // necessary for content to be below app bar
     toolbar: theme.mixins.toolbar,
@@ -37,6 +39,18 @@ const useStyles = makeStyles((theme) => ({
         backgroundColor: theme.palette.background.default,
         padding: theme.spacing(3),
     },
+    media: {
+        height: 0,
+        paddingTop: '100%',
+    },
+    avatar: {
+        width: theme.spacing(25),
+        height: theme.spacing(25),
+        margin: theme.spacing(4),
+    },
+    listColor: {
+        color: '#8892b0',
+    }
 }));
 
 export default function PermanentDrawerLeft() {
@@ -61,11 +75,18 @@ export default function PermanentDrawerLeft() {
                 anchor="left"
             >
                 <div className={classes.toolbar} />
+                <Avatar
+                    className={classes.avatar}
+                    src="/images/Donald_2x2.jpg"
+                    alt="donald-jr"
+                />
+
                 <Divider />
-                <List>
+                <List className={classes.listColor}>
                     {['Home', 'Projects', 'About Me', 'Experience', 'Contact', 'Resume'].map((text, index) => (
                         <ListItem button key={text}>
-                            <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
+                            <ListItemIcon className={classes.listColor}>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
+                            {console.log(ListItemIcon)}
                             <ListItemText primary={text} />
                         </ListItem>
                     ))}
