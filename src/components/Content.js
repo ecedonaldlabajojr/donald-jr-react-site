@@ -13,43 +13,19 @@ import ListItemText from '@material-ui/core/ListItemText';
 import InboxIcon from '@material-ui/icons/MoveToInbox';
 import MailIcon from '@material-ui/icons/Mail';
 import Avatar from '@material-ui/core/Avatar';
+import Box from '@material-ui/core/Box';
+import DrawerNav from './sections/DrawerNav';
 
 const drawerWidth = 280;
 
 const useStyles = makeStyles((theme) => ({
     root: {
         display: 'flex',
+        color: '#8892b0',
     },
-    appBar: {
-        width: `calc(100% - ${drawerWidth}px)`,
-        marginLeft: drawerWidth,
-    },
-    drawer: {
-        width: drawerWidth,
-        flexShrink: 0,
-    },
-    drawerPaper: {
-        width: drawerWidth,
-        background: '#0a192f',
-    },
-    // necessary for content to be below app bar
-    toolbar: theme.mixins.toolbar,
     content: {
         flexGrow: 1,
-        backgroundColor: theme.palette.background.default,
         padding: theme.spacing(3),
-    },
-    media: {
-        height: 0,
-        paddingTop: '100%',
-    },
-    avatar: {
-        width: theme.spacing(25),
-        height: theme.spacing(25),
-        margin: theme.spacing(4),
-    },
-    listColor: {
-        color: '#8892b0',
     }
 }));
 
@@ -59,42 +35,8 @@ export default function PermanentDrawerLeft() {
     return (
         <div className={classes.root}>
             <CssBaseline />
-            <AppBar position="fixed" className={classes.appBar}>
-                <Toolbar>
-                    <Typography variant="h6" noWrap>
-                        Permanent drawer
-                    </Typography>
-                </Toolbar>
-            </AppBar>
-            <Drawer
-                className={classes.drawer}
-                variant="permanent"
-                classes={{
-                    paper: classes.drawerPaper,
-                }}
-                anchor="left"
-            >
-                <div className={classes.toolbar} />
-                <Avatar
-                    className={classes.avatar}
-                    src="/images/Donald_2x2.jpg"
-                    alt="donald-jr"
-                />
-
-                <Divider />
-                <List className={classes.listColor}>
-                    {['Home', 'Projects', 'About Me', 'Experience', 'Contact', 'Resume'].map((text, index) => (
-                        <ListItem button key={text}>
-                            <ListItemIcon className={classes.listColor}>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-                            {console.log(ListItemIcon)}
-                            <ListItemText primary={text} />
-                        </ListItem>
-                    ))}
-                </List>
-                <Divider />
-            </Drawer>
+            <DrawerNav/>
             <main className={classes.content}>
-                <div className={classes.toolbar} />
                 <Typography paragraph>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
                     ut labore et dolore magna aliqua. Rhoncus dolor purus non enim praesent elementum

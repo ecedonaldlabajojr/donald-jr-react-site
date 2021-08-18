@@ -1,8 +1,13 @@
-import Navbar from './components/Navbar'
+import React from 'react'
+import Content from './components/Content'
+import AnimatedBg from './components/layout/AnimatedBg';
 
 function App() {
   return (
-    <Navbar />
+    <React.Fragment>
+      <AnimatedBg />
+      <Content />
+    </React.Fragment>
   );
 }
 
