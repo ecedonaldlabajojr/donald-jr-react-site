@@ -100,7 +100,7 @@ function ResponsiveDrawer(props) {
             </Box>
             <List className={classes.listColor}>
                 {sectionTitles.map((text, index) => (
-                    <ListItem button key={text} className={classes.listItem} onClick={handleDrawerToggle} button component="a" href={text.replace(" ", "").toLowerCase()}>
+                    <ListItem button key={text} className={classes.listItem} onClick={handleDrawerToggle} button component="a" href={`#${text.replace(" ", "").toLowerCase()}`}>
                         <ListItemIcon className={classes.listColor}>{drawerIcons[index]}</ListItemIcon>
                         <ListItemText primary={text} />
                     </ListItem>
