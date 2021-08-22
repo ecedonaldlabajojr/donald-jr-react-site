@@ -16,6 +16,13 @@ import Avatar from '@material-ui/core/Avatar';
 import Box from '@material-ui/core/Box';
 import Typography from '@material-ui/core/Typography';
 import withWidth from "@material-ui/core/withWidth";
+import Button from '@material-ui/core/Button';
+import LaunchIcon from '@material-ui/icons/Launch';
+
+/* Import Components */
+import Welcome from './sections/Welcome';
+import Profile from './sections/Profile';
+/* */
 
 /* Material UI Icons */
 import HomeIcon from '@material-ui/icons/Home';
@@ -26,7 +33,7 @@ import MessageIcon from '@material-ui/icons/Message';
 import NoteIcon from '@material-ui/icons/Note';
 /* -------------------- */
 const drawerWidth = 260;
-
+const highlight = '#64ffda';
 const useStyles = makeStyles((theme) => ({
     root: {
         display: 'flex',
@@ -58,7 +65,7 @@ const useStyles = makeStyles((theme) => ({
     },
     content: {
         flexGrow: 1,
-        padding: theme.spacing(3),
+        paddingX: theme.spacing(3),
     },
     avatar: {
         width: theme.spacing(25),
@@ -72,12 +79,22 @@ const useStyles = makeStyles((theme) => ({
         '&:hover': {
             background: "#081526"
         }
+    },
+    btn: {
+        color: highlight,
+        width: '80%',
+        height: '50px',
+        border: `2px solid ${highlight}`,
+        borderRadius: '5px',
+    },
+    btnIcon: {
+        color: highlight,
     }
 }));
 
 
 const drawerIcons = [<HomeIcon />, <EmojiObjectsIcon />, <InfoIcon />, <WorkIcon />, <MessageIcon />, <NoteIcon />];
-const sectionTitles = ['Home', 'Projects', 'About Me', 'Experience', 'Contact', 'Resume'];
+const sectionTitles = ['Home', 'Projects', 'Profile', 'Experience', 'Contact', 'Resume'];
 function ResponsiveDrawer(props) {
     const { window } = props;
     const classes = useStyles();
@@ -89,7 +106,7 @@ function ResponsiveDrawer(props) {
 
     const drawer = (
         <div>
-            <Box fontWeight="fontWeightBold" textAlign="center" className={classes.listColor} fontSize={20} letterSpacing={2} p={1.5} mt="2rem">
+            <Box fontWeight="fontWeightBold" textAlign="center" className={classes.listColor} fontSize={22} p={1.5} mt="2rem" fontFamily="Monospace">
                 BACKEND DEVELOPER
             </Box>
             <Box component="div" display="flex" justifyContent="center">
@@ -106,7 +123,7 @@ function ResponsiveDrawer(props) {
                     </ListItem>
                 ))}
             </List>
-        </div >
+        </div>
     );
 
     const container = window !== undefined ? () => window().document.body : undefined;
@@ -146,47 +163,22 @@ function ResponsiveDrawer(props) {
                         }}
                     >
                         {drawer}
+                        <Button className={classes.btn}>Get in Touch</Button>
                     </Drawer>
                 </Hidden>
                 <Hidden smDown implementation="css">
                     <Drawer classes={{ paper: classes.drawerPaper }} variant="permanent" open>
                         {drawer}
+                        <Box display="flex" justifyContent="center">
+                            <Button className={classes.btn} mx="2px" component="a" href="/Donald Labajo Jr. CV - BackEnd Developer.pdf" target="_blank"><IconButton><LaunchIcon className={classes.btnIcon} /></IconButton>RESUME</Button>
+                        </Box>
                     </Drawer>
                 </Hidden>
             </nav>
             <main className={classes.content}>
-                <div className={classes.toolbar} />
+                <Welcome id="home" />
+                <Profile id="profile" />
             </main>
-            <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
-                <Toolbar />
-                <Typography paragraph>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                    tempor incididunt ut labore et dolore magna aliqua. Rhoncus dolor purus non
-                    enim praesent elementum facilisis leo vel. Risus at ultrices mi tempus
-                    imperdiet. Semper risus in hendrerit gravida rutrum quisque non tellus.
-                    Convallis convallis tellus id interdum velit laoreet id donec ultrices.
-                    Odio morbi quis commodo odio aenean sed adipiscing. Amet nisl suscipit
-                    adipiscing bibendum est ultricies integer quis. Cursus euismod quis viverra
-                    nibh cras. Metus vulputate eu scelerisque felis imperdiet proin fermentum
-                    leo. Mauris commodo quis imperdiet massa tincidunt. Cras tincidunt lobortis
-                    feugiat vivamus at augue. At augue eget arcu dictum varius duis at
-                    consectetur lorem. Velit sed ullamcorper morbi tincidunt. Lorem donec massa
-                    sapien faucibus et molestie ac.
-                </Typography>
-                <Typography paragraph>
-                    Consequat mauris nunc congue nisi vitae suscipit. Fringilla est ullamcorper
-                    eget nulla facilisi etiam dignissim diam. Pulvinar elementum integer enim
-                    neque volutpat ac tincidunt. Ornare suspendisse sed nisi lacus sed viverra
-                    tellus. Purus sit amet volutpat consequat mauris. Elementum eu facilisis
-                    sed odio morbi. Euismod lacinia at quis risus sed vulputate odio. Morbi
-                    tincidunt ornare massa eget egestas purus viverra accumsan in. In hendrerit
-                    gravida rutrum quisque non tellus orci ac. Pellentesque nec nam aliquam sem
-                    et tortor. Habitant morbi tristique senectus et. Adipiscing elit duis
-                    tristique sollicitudin nibh sit. Ornare aenean euismod elementum nisi quis
-                    eleifend. Commodo viverra maecenas accumsan lacus vel facilisis. Nulla
-                    posuere sollicitudin aliquam ultrices sagittis orci a.
-                </Typography>
-            </Box>
         </div>
     );
 }
