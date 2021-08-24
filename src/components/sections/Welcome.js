@@ -13,7 +13,8 @@ const useStyles = makeStyles((theme) => ({
         fontWeight: 600,
         [theme.breakpoints.down('sm')]: {
             fontSize: "3rem",
-        }
+        },
+        color: theme.palette.grey[400],
     },
     highlights: {
         color: highlight,

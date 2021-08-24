@@ -19,10 +19,7 @@ const highlight = '#64ffda';
 const technologiesArr = ["Javascript", "Node.js (Express)", "MongoDB", "React.js", "Redux", "styled-components", "HTML5", "CSS3", "Bootstrap4"]
 
 /* Socia Media URLS */
-const fbURL = "https://www.facebook.com/douwhnald.labajo/";
-const linkedInURL = "https://www.linkedin.com/in/donald-jr-labajo/";
-const githubURL = "https://github.com/ecedonaldlabajojr";
-const myEmail = "ecedonaldlabajojr@gmail.com";
+const { fbURL, linkedInURL, githubURL, myEmail } = require('../../data')
 /* -------------------- */
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -52,7 +49,7 @@ const Profile = () => {
     const classes = useStyles();
 
     return (
-        <Box width="100%" py={5} px={{ xs: 1, sm: 2, md: 3, lg: 10 }}>
+        <Box width="100%" pt={5} pb={20} px={{ xs: 1, sm: 2, md: 3, lg: 10 }}>
             <Box maxWidth={{ xs: "100%", sm: "95%", md: "85%" }}>
                 <Typography variant="h3" >Profile</Typography>
                 <Divider className={classes.root} />
@@ -66,25 +63,28 @@ const Profile = () => {
                         I shifted fields from Industrial Automation (Hardware Programming) to Web Development.
                     </Box>
                 </Typography>
-                <Typography>
+                <Typography paragraph>
                     My current role spans working on the backend, building RESTful API's and new features, debugging, recommend and implement code improvements.
                 </Typography>
                 <Typography paragraph >
                     While I spend most of my time working on the backend, I also occasionally get involved on the Frontend on tasks or features which are closely related.
                 </Typography>
                 <Typography paragraph >
-                    View my &nbsp;
+                    View my
+                    &nbsp;
                     <Link href="#projects" color="inherit" className={classes.highlight}>Projects</Link>
                     ,&nbsp;
                     <Link href="/Donald Labajo Jr. CV - BackEnd Developer.pdf" color="inherit" className={classes.highlight} target="_blank">Resume</Link>
-                    ,&nbsp;
+                    &nbsp;or&nbsp;
                     <Link href={`mailto:${myEmail}`} color="inherit" className={classes.highlight}>Get in Touch</Link>
                     .&nbsp;
                 </Typography>
                 <Typography paragraph >
-                    You can also find me on &nbsp;
-                    <Link target="_blank" href={githubURL} color="inherit" className={classes.highlight}>Github</Link> &nbsp;
-                    <Link target="_blank" href={linkedInURL} color="inherit" className={classes.highlight}>LinkedIn</Link> and &nbsp;
+                    You can also find me on&nbsp;
+                    <Link target="_blank" href={githubURL} color="inherit" className={classes.highlight}>Github</Link>
+                    ,&nbsp;
+                    <Link target="_blank" href={linkedInURL} color="inherit" className={classes.highlight}>LinkedIn</Link> and
+                    &nbsp;
                     <Link target="_blank" href={fbURL} color="inherit" className={classes.highlight}>Facebook.</Link>
                 </Typography>
                 <Typography>

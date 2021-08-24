@@ -22,6 +22,7 @@ import LaunchIcon from '@material-ui/icons/Launch';
 /* Import Components */
 import Welcome from './sections/Welcome';
 import Profile from './sections/Profile';
+import SocialMediaIcons from './sections/SocialMediaIcons';
 /* */
 
 /* Material UI Icons */
@@ -181,6 +182,7 @@ function ResponsiveDrawer(props) {
             <main className={classes.content}>
                 <Welcome id="home" />
                 <Profile id="profile" />
+                <SocialMediaIcons />
             </main>
         </div>
     );
