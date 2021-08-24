@@ -61,6 +61,10 @@ const useStyles = makeStyles((theme) => ({
     toolbar: theme.mixins.toolbar,
     drawerPaper: {
         width: drawerWidth,
+        [theme.breakpoints.down('xs')]: {
+            width: "100%",
+            flexShrink: 0,
+        },
         background: '#0a192f',
     },
     content: {
@@ -123,6 +127,9 @@ function ResponsiveDrawer(props) {
                     </ListItem>
                 ))}
             </List>
+            <Box display="flex" justifyContent="center">
+                <Button className={classes.btn} mx="2px" component="a" href="/Donald Labajo Jr. CV - BackEnd Developer.pdf" target="_blank"><IconButton><LaunchIcon className={classes.btnIcon} /></IconButton>RESUME</Button>
+            </Box>
         </div>
     );
 
@@ -163,15 +170,11 @@ function ResponsiveDrawer(props) {
                         }}
                     >
                         {drawer}
-                        <Button className={classes.btn}>Get in Touch</Button>
                     </Drawer>
                 </Hidden>
                 <Hidden smDown implementation="css">
                     <Drawer classes={{ paper: classes.drawerPaper }} variant="permanent" open>
                         {drawer}
-                        <Box display="flex" justifyContent="center">
-                            <Button className={classes.btn} mx="2px" component="a" href="/Donald Labajo Jr. CV - BackEnd Developer.pdf" target="_blank"><IconButton><LaunchIcon className={classes.btnIcon} /></IconButton>RESUME</Button>
-                        </Box>
                     </Drawer>
                 </Hidden>
             </nav>

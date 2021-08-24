@@ -3,13 +3,17 @@ import React from 'react'
 import { makeStyles } from '@material-ui/core/styles';
 import Toolbar from '@material-ui/core/Toolbar';
 
+const myEmail = "ecedonaldlabajojr@gmail.com";
 const highlight = '#64ffda';
 const useStyles = makeStyles((theme) => ({
     container: {
         height: '100vh'
     },
-    bold: {
-        fontWeight: 600
+    name: {
+        fontWeight: 600,
+        [theme.breakpoints.down('sm')]: {
+            fontSize: "3rem",
+        }
     },
     highlights: {
         color: highlight,
@@ -22,20 +26,22 @@ const useStyles = makeStyles((theme) => ({
         width: '250px',
         height: '50px',
         border: `2px solid ${highlight}`,
-        borderRadius: '5px'
+        borderRadius: '5px',
+        [theme.breakpoints.down('sm')]: {
+            width: '150px',
+        }
     }
 }));
 
 const Welcome = (props) => {
     const classes = useStyles();
-    console.log(props.id);
     return (
         <Box container="true" display="flex" justifyContent="center" flexDirection="column"
             ml={{ xs: 1, sm: 5, md: 10 }}
             className={classes.container}
             id={props.id}>
             <Typography variant="h6">Hello, I am</Typography>
-            <Typography variant="h2" className={classes.bold}>Donald Labajo Jr.</Typography>
+            <Typography variant="h2" className={classes.name}>Donald Labajo Jr.</Typography>
             <Toolbar className={classes.toolBar} />
             <Box maxWidth={{ xs: "95%", sm: "80%", md: "70%" }}>
                 <Typography variant="body1">I'm a
@@ -45,7 +51,7 @@ const Welcome = (props) => {
             </Box>
             <Toolbar className={classes.toolBar} />
             <Box component="span">
-                <Button color="primary" className={classes.btn}>Get in Touch</Button>
+                <Button color="primary" className={classes.btn} href={`mailto:${myEmail}`} > Get in Touch</Button>
             </Box>
         </Box>
     )

@@ -5,7 +5,7 @@ const AnimatedBg = () => {
     return (
         <div className="animation-area">
             <ul className="box-area">
-                {boxesArr.map((box, index) => (<li key={index}></li>))}
+                {/* {boxesArr.map((box, index) => (<li key={index}></li>))} */}
             </ul>
         </div>
     )

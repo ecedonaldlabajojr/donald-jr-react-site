@@ -17,6 +17,13 @@ import KeyboardArrowRightIcon from '@material-ui/icons/KeyboardArrowRight';
 
 const highlight = '#64ffda';
 const technologiesArr = ["Javascript", "Node.js (Express)", "MongoDB", "React.js", "Redux", "styled-components", "HTML5", "CSS3", "Bootstrap4"]
+
+/* Socia Media URLS */
+const fbURL = "https://www.facebook.com/douwhnald.labajo/";
+const linkedInURL = "https://www.linkedin.com/in/donald-jr-labajo/";
+const githubURL = "https://github.com/ecedonaldlabajojr";
+const myEmail = "ecedonaldlabajojr@gmail.com";
+/* -------------------- */
 const useStyles = makeStyles((theme) => ({
     root: {
         backgroundColor: 'rgba(136, 146, 176, 0.5)',
@@ -32,21 +39,35 @@ const useStyles = makeStyles((theme) => ({
     icon: {
         color: theme.palette.grey[300],
         minWidth: "0",
+    },
+    tech: {
+        "&:hover": {
+            color: highlight,
+        },
+        cursor: "pointer",
+
     }
 }))
 const Profile = () => {
     const classes = useStyles();
 
     return (
-        <Box width="100%" py={5} px={10}>
-            <Box maxWidth="80%">
+        <Box width="100%" py={5} px={{ xs: 1, sm: 2, md: 3, lg: 10 }}>
+            <Box maxWidth={{ xs: "100%", sm: "95%", md: "85%" }}>
                 <Typography variant="h3" >Profile</Typography>
                 <Divider className={classes.root} />
                 <Typography paragraph >
                     I am a&nbsp;
-                    <Box component="span" fontStyle="italic">Junior Backend Developer&nbsp;</Box>
-                    at <Link href="https://www.medspecialized.com/" target="_blank" className={classes.light}>MedSpecialized, Inc.</Link>&nbsp;
-                    My role spans working on the backend, building RESTful API's and new features, debugging, recommend and implement code improvements.
+                    <Box component="span" fontStyle="italic" className={classes.light}>Junior Backend Developer&nbsp;
+                        at &nbsp;<Link href="https://www.medspecialized.com/" target="_blank" className={classes.highlight}>MedSpecialized, Inc.</Link>&nbsp;
+                    </Box>
+                    By taking courses from Coursera and Udemy and spending many hours on the computer learning how to code, &nbsp;
+                    <Box component="span" fontStyle="italic" className={classes.light}>
+                        I shifted fields from Industrial Automation (Hardware Programming) to Web Development.
+                    </Box>
+                </Typography>
+                <Typography>
+                    My current role spans working on the backend, building RESTful API's and new features, debugging, recommend and implement code improvements.
                 </Typography>
                 <Typography paragraph >
                     While I spend most of my time working on the backend, I also occasionally get involved on the Frontend on tasks or features which are closely related.
@@ -57,26 +78,25 @@ const Profile = () => {
                     ,&nbsp;
                     <Link href="/Donald Labajo Jr. CV - BackEnd Developer.pdf" color="inherit" className={classes.highlight} target="_blank">Resume</Link>
                     ,&nbsp;
-                    <Link href="#" color="inherit" className={classes.highlight}>Get in Touch</Link>
+                    <Link href={`mailto:${myEmail}`} color="inherit" className={classes.highlight}>Get in Touch</Link>
                     .&nbsp;
                 </Typography>
                 <Typography paragraph >
                     You can also find me on &nbsp;
-                    <Link href="" color="inherit" className={classes.highlight}>Github</Link> &nbsp;
-                    <Link href="" color="inherit" className={classes.highlight}>LinkedIn</Link> and &nbsp;
-                    <Link href="" color="inherit" className={classes.highlight}>Facebook.</Link>
+                    <Link target="_blank" href={githubURL} color="inherit" className={classes.highlight}>Github</Link> &nbsp;
+                    <Link target="_blank" href={linkedInURL} color="inherit" className={classes.highlight}>LinkedIn</Link> and &nbsp;
+                    <Link target="_blank" href={fbURL} color="inherit" className={classes.highlight}>Facebook.</Link>
                 </Typography>
-                <Toolbar />
                 <Typography>
                     Below are the technologies I've worked on so far:
                 </Typography>
                 <List>
                     <Grid container>
                         {technologiesArr.map(tech => (
-                            <Grid item xs={12} sm={12} md={4}>
+                            <Grid item xs={6} sm={4} lg={3} key={tech}>
                                 <ListItem>
                                     <ListItemIcon className={classes.icon} ><KeyboardArrowRightIcon /></ListItemIcon>
-                                    <ListItemText primary={tech} />
+                                    <ListItemText primary={tech} className={classes.tech} />
                                 </ListItem>
                             </Grid>))}
                     </Grid>
