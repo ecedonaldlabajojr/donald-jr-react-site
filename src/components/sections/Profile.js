@@ -49,7 +49,7 @@ const Profile = () => {
     const classes = useStyles();
 
     return (
-        <Box width="100%" pt={5} pb={20} px={{ xs: 1, sm: 2, md: 3, lg: 10 }}>
+        <Box width="100%" pt={5} pb={10} px={{ xs: 1, sm: 2, md: 3, lg: 10 }}>
             <Box maxWidth={{ xs: "100%", sm: "95%", md: "85%" }}>
                 <Typography variant="h3" >Profile</Typography>
                 <Divider className={classes.root} />

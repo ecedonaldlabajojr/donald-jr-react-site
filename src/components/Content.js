@@ -22,8 +22,11 @@ import LaunchIcon from '@material-ui/icons/Launch';
 /* Import Components */
 import Welcome from './sections/Welcome';
 import Profile from './sections/Profile';
-import SocialMediaIcons from './sections/SocialMediaIcons';
+import Footer from './sections/Footer';
 /* */
+
+/* Socia Media URLS */
+const { myEmail } = require('../data');
 
 /* Material UI Icons */
 import HomeIcon from '@material-ui/icons/Home';
@@ -31,7 +34,6 @@ import EmojiObjectsIcon from '@material-ui/icons/EmojiObjects';
 import InfoIcon from '@material-ui/icons/Info';
 import WorkIcon from '@material-ui/icons/Work';
 import MessageIcon from '@material-ui/icons/Message';
-import NoteIcon from '@material-ui/icons/Note';
 /* -------------------- */
 const drawerWidth = 260;
 const highlight = '#64ffda';
@@ -98,8 +100,8 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 
-const drawerIcons = [<HomeIcon />, <EmojiObjectsIcon />, <InfoIcon />, <WorkIcon />, <MessageIcon />, <NoteIcon />];
-const sectionTitles = ['Home', 'Projects', 'Profile', 'Experience', 'Contact', 'Resume'];
+const drawerIcons = [<HomeIcon />, <EmojiObjectsIcon />, <InfoIcon />, <WorkIcon />, <MessageIcon />];
+const sectionTitles = ['Home', 'Projects', 'Profile', 'Experience', 'Contact'];
 function ResponsiveDrawer(props) {
     const { window } = props;
     const classes = useStyles();
@@ -122,13 +124,13 @@ function ResponsiveDrawer(props) {
             </Box>
             <List className={classes.listColor}>
                 {sectionTitles.map((text, index) => (
-                    <ListItem button key={text} className={classes.listItem} onClick={handleDrawerToggle} button component="a" href={`#${text.replace(" ", "").toLowerCase()}`}>
+                    <ListItem button key={text} className={classes.listItem} onClick={handleDrawerToggle} button component="a" href={index === sectionTitles.length - 1 ? `mailto:${myEmail}` : `#${text.replace(" ", "").toLowerCase()}`}>
                         <ListItemIcon className={classes.listColor}>{drawerIcons[index]}</ListItemIcon>
                         <ListItemText primary={text} />
                     </ListItem>
                 ))}
             </List>
-            <Box display="flex" justifyContent="center">
+            <Box display="flex" justifyContent="center" mt={2}>
                 <Button className={classes.btn} mx="2px" component="a" href="/Donald Labajo Jr. CV - BackEnd Developer.pdf" target="_blank"><IconButton><LaunchIcon className={classes.btnIcon} /></IconButton>RESUME</Button>
             </Box>
         </div>
@@ -182,7 +184,7 @@ function ResponsiveDrawer(props) {
             <main className={classes.content}>
                 <Welcome id="home" />
                 <Profile id="profile" />
-                <SocialMediaIcons />
+                <Footer id="footer" />
             </main>
         </div>
     );
