@@ -68,11 +68,12 @@ const useStyles = makeStyles((theme) => ({
             width: "100%",
             flexShrink: 0,
         },
-        background: '#0a192f',
+        background: "#112240"
     },
     content: {
         flexGrow: 1,
         paddingX: theme.spacing(3),
+        background: "#0a192f",
     },
     avatar: {
         width: theme.spacing(25),

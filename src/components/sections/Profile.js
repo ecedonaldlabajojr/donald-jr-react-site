@@ -22,7 +22,7 @@ const technologiesArr = ["Javascript", "Node.js (Express)", "MongoDB", "React.js
 const { fbURL, linkedInURL, githubURL, myEmail } = require('../../data')
 /* -------------------- */
 const useStyles = makeStyles((theme) => ({
-    root: {
+    divider: {
         backgroundColor: 'rgba(136, 146, 176, 0.5)',
         height: '2px',
         marginBottom: theme.spacing(5),
@@ -52,7 +52,7 @@ const Profile = () => {
         <Box width="100%" pt={5} pb={10} px={{ xs: 1, sm: 2, md: 3, lg: 10 }}>
             <Box maxWidth={{ xs: "100%", sm: "95%", md: "85%" }}>
                 <Typography variant="h3" >Profile</Typography>
-                <Divider className={classes.root} />
+                <Divider className={classes.divider} />
                 <Typography paragraph >
                     I am a&nbsp;
                     <Box component="span" fontStyle="italic" className={classes.light}>Junior Backend Developer&nbsp;

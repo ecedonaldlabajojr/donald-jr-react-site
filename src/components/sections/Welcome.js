@@ -6,6 +6,9 @@ import Toolbar from '@material-ui/core/Toolbar';
 const myEmail = "ecedonaldlabajojr@gmail.com";
 const highlight = '#64ffda';
 const useStyles = makeStyles((theme) => ({
+    root: {
+        position: "relative",
+    },
     container: {
         height: '100vh',
         position: "relative",
@@ -69,7 +72,7 @@ const BackgroundVid = () => {
 const Welcome = (props) => {
     const classes = useStyles();
     return (
-        <div style={{ position: "relative" }}>
+        <div className={classes.root}>
             <BackgroundVid />
             <Box container="true" display="flex" justifyContent="center" flexDirection="column"
                 ml={{ xs: 1, sm: 5, md: 10 }}
