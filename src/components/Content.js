@@ -14,7 +14,6 @@ import Toolbar from '@material-ui/core/Toolbar';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import Avatar from '@material-ui/core/Avatar';
 import Box from '@material-ui/core/Box';
-import Typography from '@material-ui/core/Typography';
 import withWidth from "@material-ui/core/withWidth";
 import Button from '@material-ui/core/Button';
 import LaunchIcon from '@material-ui/icons/Launch';
@@ -22,6 +21,7 @@ import LaunchIcon from '@material-ui/icons/Launch';
 /* Import Components */
 import Welcome from './sections/Welcome';
 import Profile from './sections/Profile';
+import Experience from './sections/Experience';
 import Footer from './sections/Footer';
 /* */
 
@@ -185,6 +185,7 @@ function ResponsiveDrawer(props) {
             <main className={classes.content}>
                 <Welcome id="home" />
                 <Profile id="profile" />
+                <Experience id="experience" />
                 <Footer id="footer" />
             </main>
         </div>
