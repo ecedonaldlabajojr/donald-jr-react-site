@@ -1,9 +1,7 @@
 import React from 'react'
 import Box from '@material-ui/core/Box';
 import Typography from '@material-ui/core/Typography';
-import Divider from '@material-ui/core/Divider';
 import { makeStyles } from '@material-ui/core/styles';
-import { Toolbar } from '@material-ui/core';
 import Link from '@material-ui/core/Link';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
@@ -11,6 +9,7 @@ import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import Grid from '@material-ui/core/Grid';
 
+import SectionTitle from '../layout/SectionTitle';
 /* Material UI Icons */
 import KeyboardArrowRightIcon from '@material-ui/icons/KeyboardArrowRight';
 /* -------------------- */
@@ -22,11 +21,6 @@ const technologiesArr = ["Javascript", "Node.js (Express)", "MongoDB", "React.js
 const { fbURL, linkedInURL, githubURL, myEmail } = require('../../data')
 /* -------------------- */
 const useStyles = makeStyles((theme) => ({
-    divider: {
-        backgroundColor: 'rgba(136, 146, 176, 0.5)',
-        height: '2px',
-        marginBottom: theme.spacing(5),
-    },
     highlight: {
         color: highlight,
     },
@@ -49,10 +43,9 @@ const Profile = () => {
     const classes = useStyles();
 
     return (
-        <Box width="100%" pt={5} pb={10} px={{ xs: 1, sm: 2, md: 3, lg: 10 }}>
+        <Box width="100%" pt={10} pb={10} px={{ xs: 1, sm: 2, md: 3, lg: 10 }}>
             <Box maxWidth={{ xs: "100%", sm: "95%", md: "85%" }}>
-                <Typography variant="h3" >Profile</Typography>
-                <Divider className={classes.divider} />
+                <SectionTitle title="Profile" />
                 <Typography paragraph >
                     I am a&nbsp;
                     <Box component="span" fontStyle="italic" className={classes.light}>Junior Backend Developer&nbsp;

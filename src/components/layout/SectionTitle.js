@@ -8,17 +8,20 @@ const useStyles = makeStyles((theme) => ({
     divider: {
         backgroundColor: 'rgba(136, 146, 176, 0.5)',
         height: '2px',
-        marginBottom: theme.spacing(5),
+        width: "100%",
+        maxWidth: theme.spacing(50),
     },
 }))
 
-const SectionTitle = ({ title }) => {
+const SectionTitle = ({ title = "" }) => {
     const classes = useStyles();
 
     return (
-        <Box>
-            <Typography variant="h3" >{title}</Typography>
-            <Divider className={classes.divider} />
+        <Box display="flex" mb={5}>
+            <Typography variant="h4" component="span" className={classes.title}>{title.toUpperCase()}</Typography>
+            <Box display="flex" flex="1" alignItems="center" ml={2}>
+                <Divider className={classes.divider} />
+            </Box>
         </Box>
     )
 }

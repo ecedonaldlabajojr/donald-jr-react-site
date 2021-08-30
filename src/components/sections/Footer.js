@@ -22,6 +22,7 @@ const useStyles = makeStyles((theme) => ({
         alignItems: "center",
         right: "1%",
         bottom: "0",
+        zIndex: "50",
         [theme.breakpoints.down('sm')]: {
             position: "relative",
             left: "0",
