@@ -51,9 +51,9 @@ const Profile = () => {
                     <Box component="span" fontStyle="italic" className={classes.light}>Junior Backend Developer&nbsp;
                         at &nbsp;<Link href="https://www.medspecialized.com/" target="_blank" className={classes.highlight}>MedSpecialized, Inc.</Link>&nbsp;
                     </Box>
-                    By taking courses from Coursera and Udemy and spending many hours on the computer learning how to code, &nbsp;
+                    By taking different courses from Coursera and Udemy and spending many hours on the computer learning how to code, &nbsp;
                     <Box component="span" fontStyle="italic" className={classes.light}>
-                        I shifted fields from Industrial Automation (Hardware Programming) to Web Development.
+                        I was able to shift fields from Industrial Automation (Hardware Programming) to Web Development.
                     </Box>
                 </Typography>
                 <Typography paragraph>

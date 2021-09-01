@@ -30,7 +30,7 @@ export const jobsArray = [
         role: "PLC Programming, HMI/SCADA Development, Commissioning",
         tasks: [
             "Create, simulate and test PLC programs (Allen-Bradley Logix5000 Controllers) for various systems such as Coffee Extraction, Evaporation & Filtration, Spray Dryer, Extract Storage System, HTST Pasteurization, etc.",
-            "Develop HMI/SCADA solutions for both standalone & distributed systems; develop and optimizeapplications based on High - Performance HMI Graphics.",
+            "Develop HMI/SCADA solutions for both standalone & distributed systems; develop and optimize applications based on High - Performance HMI Graphics.",
         ],
         company: "TEC Square Solutions Inc.",
         duration: "Nov 2018 - July 2020",

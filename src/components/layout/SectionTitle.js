@@ -7,7 +7,7 @@ import { makeStyles } from '@material-ui/core/styles'
 const useStyles = makeStyles((theme) => ({
     divider: {
         backgroundColor: 'rgba(136, 146, 176, 0.5)',
-        height: '2px',
+        height: '1px',
         width: "100%",
         maxWidth: theme.spacing(50),
     },

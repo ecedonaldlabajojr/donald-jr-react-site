@@ -23,6 +23,7 @@ import Welcome from './sections/Welcome';
 import Profile from './sections/Profile';
 import Experience from './sections/Experience';
 import Footer from './sections/Footer';
+import Projects from './sections/Projects';
 /* */
 
 /* Socia Media URLS */
@@ -186,6 +187,7 @@ function ResponsiveDrawer(props) {
                 <Welcome id="home" />
                 <Profile id="profile" />
                 <Experience id="experience" />
+                <Projects id="projects" />
                 <Footer id="footer" />
             </main>
         </div>
