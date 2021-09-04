@@ -15,7 +15,7 @@ import KeyboardArrowRightIcon from '@material-ui/icons/KeyboardArrowRight';
 /* -------------------- */
 
 const highlight = '#64ffda';
-const technologiesArr = ["Javascript", "Node.js (Express)", "MongoDB", "React.js", "Redux", "styled-components", "HTML5", "CSS3", "Bootstrap4"]
+const technologiesArr = ["Javascript", "Node.js (Express)", "MongoDB", "React.js", "Redux", "Reduxjs/Toolkit", "styled-components", "HTML5", "CSS3", "Bootstrap4"]
 
 /* Socia Media URLS */
 const { fbURL, linkedInURL, githubURL, myEmail } = require('../../data')
