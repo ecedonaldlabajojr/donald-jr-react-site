@@ -14,6 +14,7 @@ import Box from '@material-ui/core/Box';
 import ArrowRightIcon from '@material-ui/icons/ArrowRight';
 import WorkOutlineIcon from '@material-ui/icons/WorkOutline';
 import { Divider } from '@material-ui/core';
+import { useEffect } from 'react'
 
 import SectionTitle from '../layout/SectionTitle';
 
@@ -128,7 +129,7 @@ function Experience(props) {
     const isMobile = /xs|sm|md/.test(props.width);
 
     return (
-        <Box width="100%" pt={5} pb={10} px={{ xs: 1, sm: 2, md: 3, lg: 10 }} id={props.id}>
+        <Box width="100%" pt={10} pb={10} px={{ xs: 1, sm: 2, md: 3, lg: 10 }} id={props.id}>
             <SectionTitle title="Experience" />
             <Box className={classes.container}>
                 <Timeline align={isMobile ? "left" : "alternate"} className={classes.timeline} >
