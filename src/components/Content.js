@@ -24,6 +24,7 @@ import Profile from './sections/Profile';
 import Experience from './sections/Experience';
 import Footer from './sections/Footer';
 import Projects from './sections/Projects';
+import Loading from './layout/Loading';
 /* */
 
 /* Socia Media URLS */
@@ -43,6 +44,7 @@ const useStyles = makeStyles((theme) => ({
     root: {
         display: 'flex',
         color: '#8892b0',
+        position: 'relative',
     },
     drawer: {
         [theme.breakpoints.up('md')]: {
@@ -124,6 +126,17 @@ function ResponsiveDrawer(props) {
     const [mobileOpen, setMobileOpen] = React.useState(false);
     const isMobile = /xs|sm/.test(props.width);
     const isMobileXS = /xs/.test(props.width);
+    const [userData, setUserData] = React.useState(null);
+
+    React.useEffect(() => {
+        fetch('https://donald-portfolio-site-default-rtdb.asia-southeast1.firebasedatabase.app/.json')
+            .then(response => {
+                if (!response.ok) throw new Error(response.statusText);
+                return response.json();
+            })
+            .then(data => setUserData(data))
+            .catch(e => console.log(e))
+    }, []);
 
     const handleDrawerToggle = () => { if (isMobile) setMobileOpen(!mobileOpen); }
 
@@ -156,51 +169,55 @@ function ResponsiveDrawer(props) {
     const container = window !== undefined ? () => window().document.body : undefined;
 
     return (
-        <div className={classes.root}>
-            <CssBaseline />
-            <Hidden mdUp implementation="css">
-                <AppBar position="fixed" className={classes.appBar}>
-                    <Toolbar>
-                        <IconButton
-                            color="inherit"
-                            aria-label="open drawer"
-                            edge="start"
-                            onClick={handleDrawerToggle}
-                            className={classes.menuButton}
-                        >
-                            <MenuIcon fontSize='large' />
-                        </IconButton>
-                    </Toolbar>
-                </AppBar>
-            </Hidden>
-            <nav className={classes.drawer} aria-label="mailbox folders">
-                {/* The implementation can be swapped with js to avoid SEO duplication of links. */}
-                <Hidden mdDown implementation="css">
-                    <Drawer
-                        container={container}
-                        variant="temporary"
-                        anchor={theme.direction === 'rtl' ? 'right' : 'left'}
-                        open={mobileOpen}
-                        onClose={handleDrawerToggle}
-                        classes={{ paper: classes.drawerPaper }}
-                        ModalProps={{ keepMounted: true }}>
-                        {drawer}
-                    </Drawer>
-                </Hidden>
-                <Hidden smDown implementation="css">
-                    <Drawer classes={{ paper: classes.drawerPaper }} variant="permanent" open>
-                        {drawer}
-                    </Drawer>
-                </Hidden>
-            </nav>
-            <main className={classes.content}>
-                <Welcome id="home" />
-                <Profile id="profile" />
-                <Experience id="experience" />
-                <Projects id="projects" />
-                <Footer id="footer" />
-            </main>
-        </div>
+        <React.Fragment>
+            {!userData && <Loading />}
+            {userData &&
+                <div className={classes.root}>
+                    <CssBaseline />
+                    <Hidden mdUp implementation="css">
+                        <AppBar position="fixed" className={classes.appBar}>
+                            <Toolbar>
+                                <IconButton
+                                    color="inherit"
+                                    aria-label="open drawer"
+                                    edge="start"
+                                    onClick={handleDrawerToggle}
+                                    className={classes.menuButton}
+                                >
+                                    <MenuIcon fontSize='large' />
+                                </IconButton>
+                            </Toolbar>
+                        </AppBar>
+                    </Hidden>
+                    <nav className={classes.drawer} aria-label="mailbox folders">
+                        {/* The implementation can be swapped with js to avoid SEO duplication of links. */}
+                        <Hidden mdDown implementation="css">
+                            <Drawer
+                                container={container}
+                                variant="temporary"
+                                anchor={theme.direction === 'rtl' ? 'right' : 'left'}
+                                open={mobileOpen}
+                                onClose={handleDrawerToggle}
+                                classes={{ paper: classes.drawerPaper }}
+                                ModalProps={{ keepMounted: true }}>
+                                {drawer}
+                            </Drawer>
+                        </Hidden>
+                        <Hidden smDown implementation="css">
+                            <Drawer classes={{ paper: classes.drawerPaper }} variant="permanent" open>
+                                {drawer}
+                            </Drawer>
+                        </Hidden>
+                    </nav>
+                    <main className={classes.content}>
+                        <Welcome id="home" />
+                        <Profile id="profile" />
+                        <Experience id="experience" />
+                        <Projects id="projects" />
+                        <Footer id="footer" />
+                    </main>
+                </div>}
+        </React.Fragment>
     );
 }
 
