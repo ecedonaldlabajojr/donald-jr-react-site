@@ -18,7 +18,7 @@ import withWidth from "@material-ui/core/withWidth";
 import Button from '@material-ui/core/Button';
 import LaunchIcon from '@material-ui/icons/Launch';
 
-/* Import Components */
+/* Import Sections */
 import Welcome from './sections/Welcome';
 import Profile from './sections/Profile';
 import Experience from './sections/Experience';
@@ -35,6 +35,7 @@ import EmojiObjectsIcon from '@material-ui/icons/EmojiObjects';
 import InfoIcon from '@material-ui/icons/Info';
 import WorkIcon from '@material-ui/icons/Work';
 import MessageIcon from '@material-ui/icons/Message';
+import CloseIcon from '@material-ui/icons/Close';
 /* -------------------- */
 const drawerWidth = 260;
 const highlight = '#64ffda';
@@ -99,6 +100,17 @@ const useStyles = makeStyles((theme) => ({
     },
     btnIcon: {
         color: highlight,
+    },
+    close: {
+        color: theme.palette.grey[100],
+        position: 'absolute',
+        top: theme.spacing(1.5),
+        right: theme.spacing(1.5),
+        transition: '0.1s all ease-out',
+        '&:hover': {
+            color: highlight,
+            transform: 'scale(1.25)',
+        }
     }
 }));
 
@@ -111,6 +123,7 @@ function ResponsiveDrawer(props) {
     const theme = useTheme();
     const [mobileOpen, setMobileOpen] = React.useState(false);
     const isMobile = /xs|sm/.test(props.width);
+    const isMobileXS = /xs/.test(props.width);
 
     const handleDrawerToggle = () => { if (isMobile) setMobileOpen(!mobileOpen); }
 
@@ -136,6 +149,7 @@ function ResponsiveDrawer(props) {
             <Box display="flex" justifyContent="center" mt={2}>
                 <Button className={classes.btn} mx="2px" component="a" href="/Donald Labajo Jr. CV - BackEnd Developer.pdf" target="_blank"><IconButton><LaunchIcon className={classes.btnIcon} /></IconButton>RESUME</Button>
             </Box>
+            {isMobileXS && <CloseIcon className={classes.close} fontSize="large" onClick={handleDrawerToggle} />}
         </div>
     );
 

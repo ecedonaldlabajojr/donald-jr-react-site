@@ -14,6 +14,10 @@ import LinkedInIcon from '@material-ui/icons/LinkedIn';
 const { fbURL, linkedInURL, githubURL } = require('../../data')
 /* -------------------- */
 
+/* React - Reveal */
+import Bounce from 'react-reveal/Bounce';
+/* -------------------- */
+
 const highlight = '#64ffda';
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -69,18 +73,20 @@ const SocialMediaIcons = () => {
 
     return (
         <Box className={classes.root}>
-            <Box gap={25} className={classes.iconsContainer}>
-                <Box button="true" component="a" href={fbURL} target="_blank" className={classes.iconWrapper}>
-                    <FacebookIcon fontSize="large" className={classes.icon} />
+            <Bounce right>
+                <Box gap={25} className={classes.iconsContainer}>
+                    <Box button="true" component="a" href={fbURL} target="_blank" className={classes.iconWrapper}>
+                        <FacebookIcon fontSize="large" className={classes.icon} />
+                    </Box>
+                    <Box button="true" component="a" href={githubURL} target="_blank" className={classes.iconWrapper}>
+                        <GitHubIcon fontSize="large" className={classes.icon} />
+                    </Box>
+                    <Box button="true" component="a" href={linkedInURL} target="_blank" className={classes.iconWrapper}>
+                        <LinkedInIcon fontSize="large" className={classes.icon} />
+                    </Box>
+                    <Divider orientation="vertical" className={classes.divider} />
                 </Box>
-                <Box button="true" component="a" href={githubURL} target="_blank" className={classes.iconWrapper}>
-                    <GitHubIcon fontSize="large" className={classes.icon} />
-                </Box>
-                <Box button="true" component="a" href={linkedInURL} target="_blank" className={classes.iconWrapper}>
-                    <LinkedInIcon fontSize="large" className={classes.icon} />
-                </Box>
-                <Divider orientation="vertical" className={classes.divider} />
-            </Box>
+            </Bounce>
         </Box>
     )
 }
