@@ -72,7 +72,7 @@ const BackgroundVid = () => {
 const Welcome = (props) => {
     const classes = useStyles();
     return (
-        <div className={classes.root}>
+        <div className={classes.root} id={props.id}>
             <BackgroundVid />
             <Box container="true" display="flex" justifyContent="center" flexDirection="column"
                 ml={{ xs: 1, sm: 5, md: 10 }}

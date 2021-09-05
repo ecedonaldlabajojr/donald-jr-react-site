@@ -128,7 +128,7 @@ function Experience(props) {
     const isMobile = /xs|sm|md/.test(props.width);
 
     return (
-        <Box width="100%" pt={5} pb={10} px={{ xs: 1, sm: 2, md: 3, lg: 10 }}>
+        <Box width="100%" pt={5} pb={10} px={{ xs: 1, sm: 2, md: 3, lg: 10 }} id={props.id}>
             <SectionTitle title="Experience" />
             <Box className={classes.container}>
                 <Timeline align={isMobile ? "left" : "alternate"} className={classes.timeline} >

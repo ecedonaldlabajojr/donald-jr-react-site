@@ -39,11 +39,11 @@ const useStyles = makeStyles((theme) => ({
 
     }
 }))
-const Profile = () => {
+const Profile = (props) => {
     const classes = useStyles();
 
     return (
-        <Box width="100%" pt={10} pb={10} px={{ xs: 1, sm: 2, md: 3, lg: 10 }}>
+        <Box width="100%" pt={10} pb={10} px={{ xs: 1, sm: 2, md: 3, lg: 10 }} id={props.id}>
             <Box maxWidth={{ xs: "100%", sm: "95%", md: "85%" }}>
                 <SectionTitle title="Profile" />
                 <Typography paragraph >

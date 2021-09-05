@@ -50,6 +50,7 @@ const useStyles = makeStyles((theme) => ({
         },
     },
     appBar: {
+        background: '#112240',
         [theme.breakpoints.up('md')]: {
             width: `calc(100% - ${drawerWidth}px)`,
             marginLeft: drawerWidth,
@@ -103,13 +104,13 @@ const useStyles = makeStyles((theme) => ({
 
 
 const drawerIcons = [<HomeIcon />, <EmojiObjectsIcon />, <InfoIcon />, <WorkIcon />, <MessageIcon />];
-const sectionTitles = ['Home', 'Projects', 'Profile', 'Experience', 'Contact'];
+const sectionTitles = ['Home', 'Profile', 'Experience', 'Projects', 'Contact'];
 function ResponsiveDrawer(props) {
     const { window } = props;
     const classes = useStyles();
     const theme = useTheme();
     const [mobileOpen, setMobileOpen] = React.useState(false);
-    const isMobile = /xs|sm|md/.test(props.width);
+    const isMobile = /xs|sm/.test(props.width);
 
     const handleDrawerToggle = () => { if (isMobile) setMobileOpen(!mobileOpen); }
 
@@ -160,20 +161,15 @@ function ResponsiveDrawer(props) {
             </Hidden>
             <nav className={classes.drawer} aria-label="mailbox folders">
                 {/* The implementation can be swapped with js to avoid SEO duplication of links. */}
-                <Hidden smUp implementation="css">
+                <Hidden mdDown implementation="css">
                     <Drawer
                         container={container}
                         variant="temporary"
                         anchor={theme.direction === 'rtl' ? 'right' : 'left'}
                         open={mobileOpen}
                         onClose={handleDrawerToggle}
-                        classes={{
-                            paper: classes.drawerPaper,
-                        }}
-                        ModalProps={{
-                            keepMounted: true, // Better open performance on mobile.
-                        }}
-                    >
+                        classes={{ paper: classes.drawerPaper }}
+                        ModalProps={{ keepMounted: true }}>
                         {drawer}
                     </Drawer>
                 </Hidden>

@@ -125,7 +125,7 @@ const ProjectItem = ({ proj }) => {
     );
 }
 
-export default function Projects() {
+export default function Projects(props) {
     const projectsList = projectsArr.map(proj => {
         return (
             <Grid item xs={12} sm={6} lg={4} key={proj.name}>
@@ -135,7 +135,7 @@ export default function Projects() {
     })
 
     return (
-        <Box width="100%" pt={10} pb={10} px={{ xs: 1, sm: 2, md: 3, lg: 10 }}>
+        <Box width="100%" pt={10} pb={10} px={{ xs: 1, sm: 2, md: 3, lg: 10 }} id={props.id} mb={3}>
             <InputTitle title="Projects" />
             <Container maxWidth="md">
                 <Grid container spacing={2}>
