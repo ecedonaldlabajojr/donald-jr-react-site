@@ -14,6 +14,10 @@ import SectionTitle from '../layout/SectionTitle';
 import KeyboardArrowRightIcon from '@material-ui/icons/KeyboardArrowRight';
 /* -------------------- */
 
+/* React-Reveal */
+import Fade from 'react-reveal/Fade'
+/* -------------------- */
+
 const highlight = '#64ffda';
 const technologiesArr = ["Javascript", "Node.js (Express)", "MongoDB", "React.js", "Redux", "Reduxjs/Toolkit", "styled-components", "HTML5", "CSS3", "Bootstrap4"]
 
@@ -46,54 +50,56 @@ const Profile = (props) => {
         <Box width="100%" pt={10} pb={10} px={{ xs: 1, sm: 2, md: 3, lg: 10 }} id={props.id}>
             <Box maxWidth={{ xs: "100%", sm: "95%", md: "85%" }}>
                 <SectionTitle title="Profile" />
-                <Typography paragraph >
-                    I am a&nbsp;
-                    <Box component="span" fontStyle="italic" className={classes.light}>Junior Backend Developer&nbsp;
-                        at &nbsp;<Link href="https://www.medspecialized.com/" target="_blank" className={classes.highlight}>MedSpecialized, Inc.</Link>&nbsp;
-                    </Box>
-                    By taking different courses from Coursera and Udemy and spending many hours on the computer learning how to code, &nbsp;
-                    <Box component="span" fontStyle="italic" className={classes.light}>
-                        I was able to shift fields from Industrial Automation (Hardware Programming) to Web Development.
-                    </Box>
-                </Typography>
-                <Typography paragraph>
-                    My current role spans working on the backend, building RESTful API's and new features, debugging, recommend and implement code improvements.
-                </Typography>
-                <Typography paragraph >
-                    While I spend most of my time working on the backend, I also occasionally get involved on the Frontend on tasks or features which are closely related.
-                </Typography>
-                <Typography paragraph >
-                    View my
-                    &nbsp;
-                    <Link href="#projects" color="inherit" className={classes.highlight}>Projects</Link>
-                    ,&nbsp;
-                    <Link href="/Donald Labajo Jr. CV - BackEnd Developer.pdf" color="inherit" className={classes.highlight} target="_blank">Resume</Link>
-                    &nbsp;or&nbsp;
-                    <Link href={`mailto:${myEmail}`} color="inherit" className={classes.highlight}>Get in Touch</Link>
-                    .&nbsp;
-                </Typography>
-                <Typography paragraph >
-                    You can also find me on&nbsp;
-                    <Link target="_blank" href={githubURL} color="inherit" className={classes.highlight}>Github</Link>
-                    ,&nbsp;
-                    <Link target="_blank" href={linkedInURL} color="inherit" className={classes.highlight}>LinkedIn</Link> and
-                    &nbsp;
-                    <Link target="_blank" href={fbURL} color="inherit" className={classes.highlight}>Facebook.</Link>
-                </Typography>
-                <Typography>
-                    Below are the technologies I've worked on so far:
-                </Typography>
-                <List>
-                    <Grid container>
-                        {technologiesArr.map(tech => (
-                            <Grid item xs={6} sm={4} lg={3} key={tech}>
-                                <ListItem>
-                                    <ListItemIcon className={classes.icon} ><KeyboardArrowRightIcon /></ListItemIcon>
-                                    <ListItemText primary={tech} className={classes.tech} />
-                                </ListItem>
-                            </Grid>))}
-                    </Grid>
-                </List>
+                <Fade bottom>
+                    <Typography paragraph >
+                        I am a&nbsp;
+                        <Box component="span" fontStyle="italic" className={classes.light}>Junior Backend Developer&nbsp;
+                            at &nbsp;<Link href="https://www.medspecialized.com/" target="_blank" className={classes.highlight}>MedSpecialized, Inc.</Link>&nbsp;
+                        </Box>
+                        By taking different courses from Coursera and Udemy and spending many hours on the computer learning how to code, &nbsp;
+                        <Box component="span" fontStyle="italic" className={classes.light}>
+                            I was able to shift fields from Industrial Automation (Hardware Programming) to Web Development.
+                        </Box>
+                    </Typography>
+                    <Typography paragraph>
+                        My current role spans working on the backend, building RESTful API's and new features, debugging, recommend and implement code improvements.
+                    </Typography>
+                    <Typography paragraph >
+                        While I spend most of my time working on the backend, I also occasionally get involved on the Frontend on tasks or features which are closely related.
+                    </Typography>
+                    <Typography paragraph >
+                        View my
+                        &nbsp;
+                        <Link href="#projects" color="inherit" className={classes.highlight}>Projects</Link>
+                        ,&nbsp;
+                        <Link href="/Donald Labajo Jr. CV - BackEnd Developer.pdf" color="inherit" className={classes.highlight} target="_blank">Resume</Link>
+                        &nbsp;or&nbsp;
+                        <Link href={`mailto:${myEmail}`} color="inherit" className={classes.highlight}>Get in Touch</Link>
+                        .&nbsp;
+                    </Typography>
+                    <Typography paragraph >
+                        You can also find me on&nbsp;
+                        <Link target="_blank" href={githubURL} color="inherit" className={classes.highlight}>Github</Link>
+                        ,&nbsp;
+                        <Link target="_blank" href={linkedInURL} color="inherit" className={classes.highlight}>LinkedIn</Link> and
+                        &nbsp;
+                        <Link target="_blank" href={fbURL} color="inherit" className={classes.highlight}>Facebook.</Link>
+                    </Typography>
+                    <Typography>
+                        Below are the technologies I've worked on so far:
+                    </Typography>
+                    <List>
+                        <Grid container>
+                            {technologiesArr.map(tech => (
+                                <Grid item xs={6} sm={4} lg={3} key={tech}>
+                                    <ListItem>
+                                        <ListItemIcon className={classes.icon} ><KeyboardArrowRightIcon /></ListItemIcon>
+                                        <ListItemText primary={tech} className={classes.tech} />
+                                    </ListItem>
+                                </Grid>))}
+                        </Grid>
+                    </List>
+                </Fade>
             </Box>
         </Box>
     )

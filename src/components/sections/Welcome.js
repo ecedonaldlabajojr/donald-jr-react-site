@@ -3,6 +3,10 @@ import React from 'react'
 import { makeStyles } from '@material-ui/core/styles';
 import Toolbar from '@material-ui/core/Toolbar';
 
+/* React-Reveal */
+import Fade from 'react-reveal/Fade'
+/* -------------------- */
+
 const myEmail = "ecedonaldlabajojr@gmail.com";
 const highlight = '#64ffda';
 const useStyles = makeStyles((theme) => ({
@@ -78,19 +82,23 @@ const Welcome = (props) => {
                 ml={{ xs: 1, sm: 5, md: 10 }}
                 className={classes.container}
                 id={props.id}>
-                <Typography variant="h6">Hello, I am</Typography>
-                <Typography variant="h2" className={classes.name}>Donald Labajo Jr.</Typography>
+                <Fade top>
+                    <Typography variant="h6">Hello, I am</Typography>
+                    <Typography variant="h2" className={classes.name}>Donald Labajo Jr.</Typography>
+                </Fade>
                 <Toolbar className={classes.toolBar} />
-                <Box maxWidth={{ xs: "95%", sm: "80%", md: "70%" }}>
-                    <Typography variant="body1">I'm a
-                        <Box component="span" fontStyle="italic"> Backend Developer using </Box>
-                        <span className={classes.highlights}>Nodejs (Express.js Framework) and MongoDB. </span> Being an aspiring Fullstack developer, I am currently learning Frontend Technologies like <span className={classes.highlights}>React.js, Material-UI, styled-components</span> and more.
-                    </Typography>
-                </Box>
-                <Toolbar className={classes.toolBar} />
-                <Box component="span">
-                    <Button color="primary" className={classes.btn} href={`mailto:${myEmail}`} > Get in Touch</Button>
-                </Box>
+                <Fade bottom>
+                    <Box maxWidth={{ xs: "95%", sm: "80%", md: "70%" }}>
+                        <Typography variant="body1">I'm a
+                            <Box component="span" fontStyle="italic"> Backend Developer using </Box>
+                            <span className={classes.highlights}>Nodejs (Express.js Framework) and MongoDB. </span> Being an aspiring Fullstack developer, I am currently learning Frontend Technologies like <span className={classes.highlights}>React.js, Material-UI, styled-components</span> and more.
+                        </Typography>
+                    </Box>
+                    <Toolbar className={classes.toolBar} />
+                    <Box component="span">
+                        <Button color="primary" className={classes.btn} href={`mailto:${myEmail}`} > Get in Touch</Button>
+                    </Box>
+                </Fade>
             </Box>
         </div>
     )

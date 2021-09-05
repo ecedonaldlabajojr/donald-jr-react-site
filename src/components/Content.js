@@ -154,7 +154,7 @@ function ResponsiveDrawer(props) {
                             onClick={handleDrawerToggle}
                             className={classes.menuButton}
                         >
-                            <MenuIcon />
+                            <MenuIcon fontSize='large' />
                         </IconButton>
                     </Toolbar>
                 </AppBar>
