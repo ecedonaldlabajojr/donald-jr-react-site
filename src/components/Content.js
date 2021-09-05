@@ -134,7 +134,9 @@ function ResponsiveDrawer(props) {
                 if (!response.ok) throw new Error(response.statusText);
                 return response.json();
             })
-            .then(data => setUserData(data))
+            .then(data => {
+                setTimeout(() => setUserData(data), 1500)
+            })
             .catch(e => console.log(e))
     }, []);
 
@@ -148,8 +150,7 @@ function ResponsiveDrawer(props) {
             <Box component="div" display="flex" justifyContent="center">
                 <Avatar
                     className={classes.avatar}
-                    src="/images/Donald_2x2.jpg"
-                    alt="donald-jr" />
+                    src="Donald_2x2.JPG" />
             </Box>
             <List className={classes.listColor}>
                 {sectionTitles.map((text, index) => (

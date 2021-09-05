@@ -67,7 +67,7 @@ const BackgroundVid = () => {
         <Box>
             <Box className={classes.vidOverlay} />
             <video autoPlay loop muted className={classes.vid}>
-                <source src="https://giant.gfycat.com/DearestCautiousGordonsetter.mp4" type="video/mp4"></source>
+                <source src="images/tesseract.mp4" type="video/mp4"></source>
             </video>
         </Box>
     )
