@@ -212,9 +212,9 @@ function ResponsiveDrawer(props) {
                     </nav>
                     <main className={classes.content}>
                         <Welcome id="home" />
-                        <Profile id="profile" />
-                        <Experience id="experience" />
-                        <Projects id="projects" />
+                        <Profile id="profile" techs={userData.techs} />
+                        <Experience id="experience" experience={userData.experience} />
+                        <Projects id="projects" projects={userData.projects} />
                         <Footer id="footer" />
                     </main>
                 </div>}

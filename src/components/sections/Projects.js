@@ -64,31 +64,6 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-const projectsArr = [
-    {
-        name: 'Cafe di Vincenzo',
-        description: 'Coffee shop website using React.js, CSS Module and React-Context',
-        github: 'https://github.com/ecedonaldlabajojr/react-cafe-vincenzo',
-        link: 'https://react-vincenzo.web.app/',
-        techs: ["React", "CSS Modules", "React-Context"],
-    },
-    {
-        name: 'Personal Site v1.0',
-        description: 'My very first personal website. Humbly built with JS, Bootstrap4, Jquery and MailChimp API for storing messages.',
-        github: 'https://github.com/ecedonaldlabajojr/Portfolio',
-        link: 'https://donaldjr-website.herokuapp.com/',
-        techs: ["JS", "Bootstrap4", "Jquery", "MailChimp API"],
-    },
-    {
-        name: 'AMZN.PH',
-        description: 'Online shopping cart, using Full MERN Stack.',
-        github: null,
-        link: null,
-        techs: ["React", "Redux", "Material-UI", "ExpressJS", "MongoDB"],
-    },
-];
-
-
 const ProjectItem = ({ proj }) => {
     const classes = useStyles();
 
@@ -126,7 +101,7 @@ const ProjectItem = ({ proj }) => {
 }
 
 export default function Projects(props) {
-    const projectsList = projectsArr.map(proj => {
+    const projectsList = props.projects.map(proj => {
         return (
             <Grid item xs={12} sm={6} lg={4} key={proj.name}>
                 <ProjectItem proj={proj} />

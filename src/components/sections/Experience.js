@@ -14,13 +14,8 @@ import Box from '@material-ui/core/Box';
 import ArrowRightIcon from '@material-ui/icons/ArrowRight';
 import WorkOutlineIcon from '@material-ui/icons/WorkOutline';
 import { Divider } from '@material-ui/core';
-import { useEffect } from 'react'
 
 import SectionTitle from '../layout/SectionTitle';
-
-/* Import Jobs */
-import { jobsArray } from '../../data';
-/*    */
 
 /* Import Job Icons */
 import CodeIcon from '@material-ui/icons/Code';
@@ -125,7 +120,8 @@ const WorkItem = (props) => {
 
 function Experience(props) {
     const classes = useStyles();
-    const jobItems = jobsArray.map((job, index) => <WorkItem workInfo={job} key={index} />)
+    const sortedJobExperience = [...props.experience].reverse();
+    const jobItems = sortedJobExperience.map((job, index) => <WorkItem workInfo={job} key={index} />)
     const isMobile = /xs|sm|md/.test(props.width);
 
     return (

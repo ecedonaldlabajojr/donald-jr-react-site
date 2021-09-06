@@ -19,7 +19,6 @@ import Fade from 'react-reveal/Fade'
 /* -------------------- */
 
 const highlight = '#64ffda';
-const technologiesArr = ["Javascript", "Node.js (Express)", "MongoDB", "React.js", "Redux", "Reduxjs/Toolkit", "styled-components", "HTML5", "CSS3", "Bootstrap4"]
 
 /* Socia Media URLS */
 const { fbURL, linkedInURL, githubURL, myEmail } = require('../../data')
@@ -90,7 +89,7 @@ const Profile = (props) => {
                     </Typography>
                     <List>
                         <Grid container>
-                            {technologiesArr.map(tech => (
+                            {props.techs.map(tech => (
                                 <Grid item xs={6} sm={4} lg={3} key={tech}>
                                     <ListItem>
                                         <ListItemIcon className={classes.icon} ><KeyboardArrowRightIcon /></ListItemIcon>
